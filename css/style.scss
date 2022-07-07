@@ -109,6 +109,10 @@ svg{
     flex-direction: column;
     background-color: $secundario;
     margin: 2rem 0 2rem 0;
+    .nav__alin{
+        @include disp(flex,row ,space-around);
+        text-decoration: none;
+    }
 }
 .boton{
     list-style: none;
@@ -119,12 +123,6 @@ svg{
         margin-bottom: -1rem;
     }
 }
-
-.nav__alin{
-    @include disp(flex,row ,space-around);
-    text-decoration: none;
-}
-
 .logo{
    text-align: center;
 
@@ -145,7 +143,21 @@ svg{
     #principal{
         width: 30rem;
         height: 30rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
+}
+.saludo {
+    animation-name: saludo;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-timeline: initial;
+}
+.inicio{
+    animation-name: saludo;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-timeline: initial;
 }
 
 /* Nosotros*/
@@ -177,6 +189,17 @@ font-size: 2rem;
 .contenedor {
     .carousel{
     margin: 0;
+    }
+    a{
+        display: flex;
+        justify-content: center;
+    }
+    .btn-gal{
+        background-color: $secundario;
+        max-width: 150px; 
+        &:hover{
+            background-color: $blanco;
+        }
     }
 }
 
@@ -210,3 +233,14 @@ font-size: 2rem;
         transform: rotateY(360deg);
     }
 }
+@keyframes saludo {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
